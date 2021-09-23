@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackNTraceDojo", "TrackNTr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackNTraceDojoTests", "TrackNTraceDojoTests\TrackNTraceDojoTests.csproj", "{CE730EB6-570A-44A2-A176-2CA125F831E1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D067B4AA-8AB0-4350-A8C4-D040D9C32D33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{29EA3C05-2567-4A2B-8C23-059BED00E94D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,9 @@ Global
 		{CE730EB6-570A-44A2-A176-2CA125F831E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE730EB6-570A-44A2-A176-2CA125F831E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE730EB6-570A-44A2-A176-2CA125F831E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{32E7D8C9-9EAC-4EA0-867E-F1F4B052627C} = {D067B4AA-8AB0-4350-A8C4-D040D9C32D33}
+		{CE730EB6-570A-44A2-A176-2CA125F831E1} = {29EA3C05-2567-4A2B-8C23-059BED00E94D}
 	EndGlobalSection
 EndGlobal
