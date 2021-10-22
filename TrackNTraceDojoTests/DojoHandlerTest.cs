@@ -31,8 +31,8 @@ namespace TrackNTraceDojoTests
         [Fact]
         public void GetRotationTime()
         {
-            var time = DojoHandler.GetRotationTime();
-            Assert
+            var time = DojoHandler.GetRotationTime(5);
+            Assert.True(time >= 0);
         }
     }
 }
