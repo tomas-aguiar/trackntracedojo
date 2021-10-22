@@ -11,10 +11,15 @@ namespace TrackNTraceDojo
         public static List<string> GetNames() => new List<string>
             {"Tomás", "Lucas", "Samuel", "Henrique", "Saulo", "Caio"};
 
-        public static void SetRotationTime(int minutes)
+        public void SetRotationTime(int minutes)
         {
             Minutes = minutes;
-        };
+        }
+        public int GetRotationTime()
+        {
+            return Minutes;
+        }
+        
     }
 
     public class RandomNames

@@ -4,6 +4,7 @@ using Xunit;
 
 namespace TrackNTraceDojoTests
 {
+
     public class DojoHandlerTest
     {
         [Fact]
@@ -31,7 +32,9 @@ namespace TrackNTraceDojoTests
         [Fact]
         public void GetRotationTime()
         {
-            var time = DojoHandler.GetRotationTime(5);
+            var dojoHandlerInstance = new DojoHandler();
+            dojoHandlerInstance.SetRotationTime(5);
+            var time = dojoHandlerInstance.GetRotationTime();
             Assert.True(time >= 0);
         }
     }
