@@ -11,7 +11,7 @@ namespace TrackNTraceDojoTests
         {
             var result = DojoHandler.GetNames();
 
-            Assert.Equal(7, result.Count);
+            Assert.Equal(6, result.Count);
         }
 
         [Fact]
@@ -26,6 +26,13 @@ namespace TrackNTraceDojoTests
             var namesList = Sort.Randomize(names);
 
             Assert.NotEqual(names, namesList);
+        }
+
+        [Fact]
+        public void GetRotationTime()
+        {
+            var time = DojoHandler.GetRotationTime();
+            Assert
         }
     }
 }

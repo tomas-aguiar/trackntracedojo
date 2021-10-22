@@ -8,6 +8,8 @@ namespace TrackNTraceDojo
     {
         public static List<string> GetNames() => new List<string>
             {"Tomás", "Lucas", "Samuel", "Henrique", "Saulo", "Caio"};
+
+        public static int GetRotationTime() => 5;
     }
 
     public class RandomNames
@@ -20,15 +22,16 @@ namespace TrackNTraceDojo
     {
         public static List<string> Randomize(List<string> namesList)
         {
-            List<string> list;
+            List<string> listNamesOrdered;
             do
             {
                 var names = new List<RandomNames>();
-                namesList.ForEach(x => names.Add(new RandomNames {Id = Guid.NewGuid(), Name = x}));
-                list = names.OrderBy(i => i.Id).Select(x => x.Name).ToList();
-            } while (!list.Equals(namesList));
+                listNamesOrdered = namesList.OrderBy(i => Guid.NewGuid()).Select(x => x).ToList();
+            } while (listNamesOrdered.Equals(namesList));
             
-            return list;
+            return listNamesOrdered;
         }
     }
+    
+    
 }
