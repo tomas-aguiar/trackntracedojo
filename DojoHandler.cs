@@ -7,14 +7,24 @@ namespace TrackNTraceDojo
     public class DojoHandler
     {
         private int Minutes { get; set; }
+        private List<string> Names { get; set; }
 
-        public static List<string> GetNames() => new List<string>
-            {"Tomás", "Lucas", "Samuel", "Henrique", "Saulo", "Caio"};
+        public List<string> GetNames() => Names;
 
-        public static void SetRotationTime(int minutes)
+        public void SetRotationTime(int minutes)
         {
             Minutes = minutes;
-        };
+        }
+
+        public int GetRotationTime()
+        {
+            return Minutes;
+        }
+
+        public void SetRotationNames(List<string> names)
+        {
+            Names = names;
+        }
     }
 
     public class RandomNames
