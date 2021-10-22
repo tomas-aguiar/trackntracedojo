@@ -7,12 +7,11 @@ namespace TrackNTraceDojoTests
 
     public class DojoHandlerTest
     {
-        [Fact]
-        public void GetsTheListOfNames()
-        {
-            var result = DojoHandler.GetNames();
+        private readonly DojoHandler _dojoHandlerInstance;
 
-            Assert.Equal(6, result.Count);
+        public DojoHandlerTest()
+        {
+            _dojoHandlerInstance = new DojoHandler();
         }
 
         [Fact]
@@ -32,10 +31,32 @@ namespace TrackNTraceDojoTests
         [Fact]
         public void GetRotationTime()
         {
+<<<<<<< HEAD
             var dojoHandlerInstance = new DojoHandler();
             dojoHandlerInstance.SetRotationTime(5);
             var time = dojoHandlerInstance.GetRotationTime();
+=======
+            _dojoHandlerInstance.SetRotationTime(5);
+            var time = _dojoHandlerInstance.GetRotationTime();
+>>>>>>> 54d64ff6808a822034ac3cdafd1b7bea8bc7c0ac
             Assert.True(time >= 0);
+        }
+
+        [Fact]
+        public void SetNamesForRotation()
+        {
+            var names = new List<string>
+            {
+                "name1",
+                "name2",
+                "name3"
+            };
+            
+            _dojoHandlerInstance.SetRotationNames(names);
+            var rotationList = _dojoHandlerInstance.GetNames();
+            
+            Assert.Equal(names, rotationList);
+            Assert.Equal(names.Count, rotationList.Count);
         }
     }
 }
