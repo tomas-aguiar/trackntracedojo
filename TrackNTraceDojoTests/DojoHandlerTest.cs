@@ -12,14 +12,6 @@ namespace TrackNTraceDojoTests
         {
             _dojoHandlerInstance = new DojoHandler();
         }
-        
-        [Fact]
-        public void GetsTheListOfNames()
-        {
-            var result = _dojoHandlerInstance.GetNames();
-
-            Assert.Equal(6, result.Count);
-        }
 
         [Fact]
         public void GetListOfRandomNames()
@@ -57,6 +49,7 @@ namespace TrackNTraceDojoTests
             var rotationList = _dojoHandlerInstance.GetNames();
             
             Assert.Equal(names, rotationList);
+            Assert.Equal(names.Count, rotationList.Count);
         }
     }
 }
