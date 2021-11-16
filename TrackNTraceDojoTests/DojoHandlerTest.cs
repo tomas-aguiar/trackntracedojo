@@ -4,14 +4,14 @@ using Xunit;
 
 namespace TrackNTraceDojoTests
 {
+
     public class DojoHandlerTest
     {
-        [Fact]
-        public void GetsTheListOfNames()
-        {
-            var result = DojoHandler.GetNames();
+        private readonly DojoHandler _dojoHandlerInstance;
 
-            Assert.Equal(7, result.Count);
+        public DojoHandlerTest()
+        {
+            _dojoHandlerInstance = new DojoHandler();
         }
 
         [Fact]
@@ -26,6 +26,32 @@ namespace TrackNTraceDojoTests
             var namesList = Sort.Randomize(names);
 
             Assert.NotEqual(names, namesList);
+        }
+
+        [Fact]
+        public void GetRotationTime()
+        {
+            var dojoHandlerInstance = new DojoHandler();
+            dojoHandlerInstance.SetRotationTime(5);
+            var time = dojoHandlerInstance.GetRotationTime();
+            Assert.True(time >= 0);
+        }
+
+        [Fact]
+        public void SetNamesForRotation()
+        {
+            var names = new List<string>
+            {
+                "name1",
+                "name2",
+                "name3"
+            };
+            
+            _dojoHandlerInstance.SetRotationNames(names);
+            var rotationList = _dojoHandlerInstance.GetNames();
+            
+            Assert.Equal(names, rotationList);
+            Assert.Equal(names.Count, rotationList.Count);
         }
     }
 }
