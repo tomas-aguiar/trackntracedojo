@@ -6,28 +6,29 @@ namespace TrackNTraceDojo
 {
     public class DojoHandler
     {
-        private int Minutes { get; set; }
+        private int RotationTime { get; set; }
+        private int CommitTime { get; set; }
         private List<string> Names { get; set; }
 
         public List<string> GetNames() => Names;
 
         public void SetRotationTime(int minutes)
         {
-            Minutes = minutes;
+            RotationTime = minutes;
         }
         public void SetCommitTime(int minutes)
         {
-            Minutes = minutes;
+            CommitTime = minutes;
         }
 
         public int GetRotationTime()
         {
-            return Minutes;
+            return RotationTime;
         }
         
         public int GetCommitTime()
         {
-            return Minutes;
+            return CommitTime;
         }
 
         public void SetRotationNames(List<string> names)

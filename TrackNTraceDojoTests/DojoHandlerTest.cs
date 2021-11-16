@@ -64,5 +64,11 @@ namespace TrackNTraceDojoTests
             Assert.Equal(names, rotationList);
             Assert.Equal(names.Count, rotationList.Count);
         }
+
+        [Fact]
+        public void CreateDojoRecord()
+        {
+            const string name = "";
+        }
     }
 }
