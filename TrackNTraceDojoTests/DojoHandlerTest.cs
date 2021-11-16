@@ -46,7 +46,7 @@ namespace TrackNTraceDojoTests
             var time = dojoHandlerInstance.GetCommitTime();
             Assert.True(time == 2);
         }
-        
+
         [Fact]
         public void SetNamesForRotation()
         {
@@ -56,10 +56,10 @@ namespace TrackNTraceDojoTests
                 "name2",
                 "name3"
             };
-            
+
             _dojoHandlerInstance.SetRotationNames(names);
             var rotationList = _dojoHandlerInstance.GetNames();
-            
+
             Assert.Equal(names, rotationList);
             Assert.Equal(names.Count, rotationList.Count);
         }
@@ -76,8 +76,26 @@ namespace TrackNTraceDojoTests
             _dojoHandlerInstance.CreateRound(driver, navigator, start, end);
 
             var recordList = _dojoHandlerInstance.GetRounds();
-            
+
             Assert.Equal(navigator, recordList.First().Navigator);
+        }
+
+
+        [Fact]
+        public void CreateDojo()
+        {
+            List<string> names = new List<string>();
+            names.Add("Lucas");
+            names.Add("Saulo");
+            const int rotationTime = 5;
+            const int commitTime = 2;
+
+            _dojoHandlerInstance.CreateDojo(names, rotationTime, commitTime);
+
+
+
+
+
         }
     }
 }

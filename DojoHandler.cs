@@ -11,8 +11,13 @@ namespace TrackNTraceDojo
         private List<string> Names { get; set; }
 
         public List<string> GetNames() => Names;
-        
+
         private List<DojoRound> DojoRounds { get; set; }
+
+        public DojoHandler()
+        {
+            DojoRounds = new List<DojoRound>();
+        }
 
         public void SetRotationTime(int minutes)
         {
@@ -38,6 +43,8 @@ namespace TrackNTraceDojo
             Names = names;
         }
 
+
+
         public void CreateRound(string driver, string navigator, DateTime start, DateTime end)
         {
             DojoRounds.Add(new DojoRound()
@@ -49,9 +56,15 @@ namespace TrackNTraceDojo
             });
         }
 
+
         public List<DojoRound> GetRounds()
         {
             return DojoRounds;
+        }
+
+        public void CreateDojo(List<string> names, int rotationTimeInMinutes, int commitTimeInMinutes)
+        {
+            throw new NotImplementedException();
         }
     }
 
