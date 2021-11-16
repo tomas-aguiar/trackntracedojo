@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TrackNTraceDojo;
 using Xunit;
 
 namespace TrackNTraceDojoTests
 {
-
     public class DojoHandlerTest
     {
         private readonly DojoHandler _dojoHandlerInstance;
@@ -32,21 +32,20 @@ namespace TrackNTraceDojoTests
         public void GetRotationTime()
         {
             var dojoHandlerInstance = new DojoHandler();
-            dojoHandlerInstance.SetTime(5);
-            var time = dojoHandlerInstance.GetTime();
-            Assert.True(time >= 0);
+            dojoHandlerInstance.SetRotationTime(5);
+            var time = dojoHandlerInstance.GetRotationTime();
+            Assert.True(time == 5);
         }
 
         [Fact]
         public void GetCommitTime()
         {
             var dojoHandlerInstance = new DojoHandler();
-            dojoHandlerInstance.SetTime(2);
-            var time = dojoHandlerInstance.GetTime();
+            dojoHandlerInstance.SetCommitTime(2);
+            var time = dojoHandlerInstance.GetCommitTime();
             Assert.True(time == 2);
         }
         
-
         [Fact]
         public void SetNamesForRotation()
         {
@@ -62,6 +61,20 @@ namespace TrackNTraceDojoTests
             
             Assert.Equal(names, rotationList);
             Assert.Equal(names.Count, rotationList.Count);
+        }
+
+        [Fact]
+        public void CreateDojoRound()
+        {
+            const string navigator = "some-one";
+            const string driver = "some-driver";
+            var start = DateTime.Now;
+            const int rotationTime = 5;
+            var end = TimeSpan.Parse(rotationTime.ToString());
+
+            _dojoHandlerInstance.CreateRound(driver, navigator, start, end);
+
+            var recordList = _dojoHandlerInstance.GetRounds();
         }
     }
 }

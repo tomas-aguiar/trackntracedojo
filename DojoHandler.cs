@@ -6,25 +6,52 @@ namespace TrackNTraceDojo
 {
     public class DojoHandler
     {
-        private int Minutes { get; set; }
+        private int RotationTime { get; set; }
+        private int CommitTime { get; set; }
         private List<string> Names { get; set; }
 
         public List<string> GetNames() => Names;
 
-        public void SetTime(int minutes)
+        public void SetRotationTime(int minutes)
         {
-            Minutes = minutes;
+            RotationTime = minutes;
+        }
+        public void SetCommitTime(int minutes)
+        {
+            CommitTime = minutes;
+        }
+
+        public int GetRotationTime()
+        {
+            return RotationTime;
         }
         
-        public int GetTime()
+        public int GetCommitTime()
         {
-            return Minutes;
+            return CommitTime;
         }
 
         public void SetRotationNames(List<string> names)
         {
             Names = names;
         }
+
+        public void CreateRound(string driver, string navigator, DateTime start, TimeSpan end)
+        {
+            return;
+        }
+
+        public List<DojoRound> GetRounds()
+        {
+            return new List<DojoRound>();
+        }
+    }
+
+    public class DojoRound
+    {
+        public string Name { get; set; }
+        public DateTime Start { get; set; }
+        public DateTime End { get; set; }
     }
 
     public class RandomNames
