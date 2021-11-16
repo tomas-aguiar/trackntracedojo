@@ -11,12 +11,21 @@ namespace TrackNTraceDojo
 
         public List<string> GetNames() => Names;
 
-        public void SetTime(int minutes)
+        public void SetRotationTime(int minutes)
         {
             Minutes = minutes;
         }
+        public void SetCommitTime(int minutes)
+        {
+            Minutes = minutes;
+        }
+
+        public int GetRotationTime()
+        {
+            return Minutes;
+        }
         
-        public int GetTime()
+        public int GetCommitTime()
         {
             return Minutes;
         }
