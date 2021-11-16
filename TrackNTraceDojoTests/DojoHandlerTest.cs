@@ -32,10 +32,20 @@ namespace TrackNTraceDojoTests
         public void GetRotationTime()
         {
             var dojoHandlerInstance = new DojoHandler();
-            dojoHandlerInstance.SetRotationTime(5);
-            var time = dojoHandlerInstance.GetRotationTime();
+            dojoHandlerInstance.SetTime(5);
+            var time = dojoHandlerInstance.GetTime();
             Assert.True(time >= 0);
         }
+
+        [Fact]
+        public void GetCommitTime()
+        {
+            var dojoHandlerInstance = new DojoHandler();
+            dojoHandlerInstance.SetTime(2);
+            var time = dojoHandlerInstance.GetTime();
+            Assert.True(time == 2);
+        }
+        
 
         [Fact]
         public void SetNamesForRotation()
