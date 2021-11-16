@@ -35,6 +35,23 @@ namespace TrackNTraceDojo
         {
             Names = names;
         }
+
+        public void CreateRound(string driver, string navigator, DateTime start, TimeSpan end)
+        {
+            return;
+        }
+
+        public List<DojoRound> GetRounds()
+        {
+            return new List<DojoRound>();
+        }
+    }
+
+    public class DojoRound
+    {
+        public string Name { get; set; }
+        public DateTime Start { get; set; }
+        public DateTime End { get; set; }
     }
 
     public class RandomNames

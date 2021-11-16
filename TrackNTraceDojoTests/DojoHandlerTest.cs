@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TrackNTraceDojo;
 using Xunit;
 
 namespace TrackNTraceDojoTests
 {
-
     public class DojoHandlerTest
     {
         private readonly DojoHandler _dojoHandlerInstance;
@@ -46,8 +46,6 @@ namespace TrackNTraceDojoTests
             Assert.True(time == 2);
         }
         
-        
-
         [Fact]
         public void SetNamesForRotation()
         {
@@ -66,9 +64,17 @@ namespace TrackNTraceDojoTests
         }
 
         [Fact]
-        public void CreateDojoRecord()
+        public void CreateDojoRound()
         {
-            const string name = "";
+            const string navigator = "some-one";
+            const string driver = "some-driver";
+            var start = DateTime.Now;
+            const int rotationTime = 5;
+            var end = TimeSpan.Parse(rotationTime.ToString());
+
+            _dojoHandlerInstance.CreateRound(driver, navigator, start, end);
+
+            var recordList = _dojoHandlerInstance.GetRounds();
         }
     }
 }
