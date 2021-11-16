@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using TrackNTraceDojo;
 using Xunit;
 
@@ -70,11 +71,13 @@ namespace TrackNTraceDojoTests
             const string driver = "some-driver";
             var start = DateTime.Now;
             const int rotationTime = 5;
-            var end = TimeSpan.Parse(rotationTime.ToString());
+            var end = start.AddMinutes(rotationTime);
 
             _dojoHandlerInstance.CreateRound(driver, navigator, start, end);
 
             var recordList = _dojoHandlerInstance.GetRounds();
+            
+            Assert.Equal(navigator, recordList.First().Navigator);
         }
     }
 }
